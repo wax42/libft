@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/24 15:01:19 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/24 20:53:28 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+
+typedef	struct s_split
+{
+	char 			*content;
+	int 			content_size;
+	struct s_split	*next;
+}			  t_split;
 
 typedef struct	s_list
 {
@@ -34,7 +41,7 @@ t_list			*ft_lst_search_index(size_t index);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 
-t_list		*ft_lstnew_index(void const *content, size_t content_size, size_t index);
+t_list		*ft_lstnew_index(void const *content, size_t content_size, size_t index, t_split *lst);
 
 void			ft_lstadd(t_list **alst, t_list *new);
 
