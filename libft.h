@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/15 08:38:40 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/24 14:11:48 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct	s_list
 {
 	void			*content;
 	size_t			content_size;
+	size_t			index;
 	struct s_list	*next;
 }				t_list;
 
@@ -28,6 +29,8 @@ int				ft_nb_mots(char *str, char separateur);
 int				ft_nb_ltr(char *str, int mot, char separateur);
 
 int				ft_index_mot(char *str, int mot, char separateur);
+
+t_list			*ft_lst_search_index(size_t index);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 
