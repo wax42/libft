@@ -6,15 +6,15 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 16:37:34 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/24 21:05:46 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/25 01:00:32 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_split		*ft_lstnew_split(char *str, int index, int c)
+static t_split		*ft_lstnew_split(char *str, int index, int c)
 {
-	t_split *tmp;
+	t_split	*tmp;
 	int		n;
 
 	if (!(tmp = (t_split*)malloc(sizeof(t_split))))
@@ -30,7 +30,7 @@ t_split		*ft_lstnew_split(char *str, int index, int c)
 	return (tmp);
 }
 
-t_split		*ft_lstsplit(char *str, int c)
+t_split				*ft_lstsplit(char *str, int c)
 {
 	int		i;
 	t_split	*header;
