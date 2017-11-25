@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/25 01:02:38 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/25 18:54:46 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct	s_split
 {
 	char			*content;
-	int				*content_size;
+	int				content_size;
 	struct s_split	*next;
 }				t_split;
 
