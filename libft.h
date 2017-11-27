@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/27 13:07:47 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/27 16:00:37 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct	s_list
 	void			*content;
 	size_t			content_size;
 	size_t			index;
-	t_split			*list;
 	struct s_list	*next;
 }				t_list;
 
@@ -43,9 +42,6 @@ t_list			*ft_lst_search_index(t_list *lst, size_t index);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 
 t_split			*ft_lstsplit(char *str, int c);
-
-t_list			*ft_lstnew_index(void const *content, size_t content_size, 
-		size_t index, t_split *lst);
 
 void			ft_lstadd(t_list **alst, t_list *new);
 
