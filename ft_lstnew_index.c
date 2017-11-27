@@ -6,13 +6,13 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 14:58:28 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/25 00:58:28 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/27 13:09:12 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew_index_split(void const *content, size_t content_size,
+t_list		*ft_lstnew_index(void const *content, size_t content_size,
 		size_t index, t_split *lst)
 {
 	t_list *new_list;
