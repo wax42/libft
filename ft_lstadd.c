@@ -6,7 +6,7 @@
 /*   By: vguerand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 17:29:25 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/13 17:29:53 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/11/28 14:51:37 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (alst != NULL && new != NULL)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	new->next = *alst;
+	*alst = new;
 }
