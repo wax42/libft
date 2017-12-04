@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/11/15 08:38:40 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/12/04 16:26:16 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 # include <unistd.h>
 # include <string.h>
 
+# define BUFF_SIZE 100
+
 typedef struct	s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+int				get_next_line(const int fd, char **line);
 
 int				ft_nb_mots(char *str, char separateur);
 
