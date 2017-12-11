@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/12/06 11:26:18 by vguerand         ###   ########.fr       */
+/*   Updated: 2017/12/11 13:38:56 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include "get_next_line.h"
-# define BUFF_SIZE 100
+# define BUFF_SIZE 0xFFFFF
 
 typedef struct	s_list
 {
