@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2017/12/29 12:05:18 by vguerand         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:18:16 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ typedef struct	s_list
 }				t_list;
 
 int				ft_nb_mots(char *str, char separateur);
-
-void 			ft_strdeltab(char **tab);
-
-int				ft_strlentab(char **str);
 
 int   			ft_nbrlen(int n, int base);
 
