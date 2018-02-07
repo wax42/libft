@@ -3,94 +3,89 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: msteffen <msteffen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 16:40:59 by vguerand          #+#    #+#             */
-/*   Updated: 2017/12/04 12:06:08 by vguerand         ###   ########.fr       */
+/*   Created: 2017/11/29 12:04:09 by msteffen          #+#    #+#             */
+/*   Updated: 2018/02/07 13:20:43 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_gnl_buf_add(char **strr, char *buf, int ret)
-{
-	char *temp;
+#include <stdio.h>
 
-	buf[ret] = '\0';
-	temp = *strr;
-	*strr = ft_strjoin(*strr, buf);
-	ft_strdel(&temp);
+static int	gnl_copy_buffer(char *buffer, int *buff_position, char **line,
+	int *flag)
+{
+	char	*search;
+
+	if (*buff_position == -1)
+		return (0);
+	search = ft_strchr(buffer + *buff_position, '\n');
+	if (search == NULL)
+	{
+		*line = ft_strdup(buffer + *buff_position);
+		if (*line == NULL)
+			return (-1);
+		*buff_position = -1;
+		*flag = 1;
+		return (0);
+	}
+	else
+	{
+		*line = ft_strndup(buffer + *buff_position,
+			search - buffer - *buff_position);
+		if (*line == NULL)
+			return (-1);
+		*buff_position = (search - buffer) + 1;
+		return (1);
+	}
 }
 
-int		ft_do_last(char **strr, char **line, int *i)
+static int	gnl_copy_fd(const int fd, char *buffer, int *buff_position,
+	char **line)
 {
-	char	*temp;
-	int		j;
+	char	*search;
+	char	*tmp;
+	int		read_len;
 
-	j = *i;
-	if (ft_strlen(*strr) > 0)
+	while ((read_len = read(fd, buffer, BUFF_SIZE)))
 	{
-		while (strr[0][j])
+		buffer[read_len] = 0;
+		if ((search = ft_strchr(buffer, '\n')) == NULL)
 		{
-			if (strr[0][j] == '\n')
-			{
-				*line = ft_strsub(*strr, 0, j);
-				temp = *strr;
-				*strr = ft_strsub(*strr, j + 1, ft_strlen(*strr));
-				ft_strdel(&temp);
-				return (1);
-			}
-			j++;
+			if ((tmp = ft_strjoin(*line, buffer)) == NULL)
+				return (-1);
+			free(*line);
+			*line = tmp;
 		}
-		*line = ft_strsub(*strr, 0, ft_strlen(*strr));
-		ft_strdel(strr);
-		return (1);
+		else
+		{
+			*buff_position = (search - buffer) + 1;
+			if ((tmp = ft_strnjoin(*line, buffer, search - buffer)) == NULL)
+				return (-1);
+			free(*line);
+			*line = tmp;
+			return (1);
+		}
 	}
 	return (0);
 }
 
-int		ft_gnl_do_lines(char **strr, char **line, int *i)
+int			get_next_line(const int fd, char **line)
 {
-	int		j;
-	char	*temp;
+	static char	buffer[BUFF_SIZE + 1];
+	static int	buff_position;
+	int			flag;
 
-	j = *i;
-	while (strr[0][j] != '\0')
-	{
-		if (strr[0][j] == '\n')
-		{
-			*line = ft_strsub(*strr, 0, j);
-			temp = *strr;
-			*strr = ft_strsub(*strr, j + 1, ft_strlen(*strr));
-			ft_strdel(&temp);
-			return (1);
-		}
-		j++;
-	}
-	return (0);
-}
-
-int		get_next_line(const int fd, char **line)
-{
-	int			ret;
-	char		buf[BUFF_SIZE + 1];
-	static char *strr;
-	int			i;
-
-	i = 0;
-	if (fd < 0 || line == NULL || BUFF_SIZE <= 0)
+	flag = 0;
+	if (BUFF_SIZE < 0 || fd < 0 || line == NULL || read(fd, NULL, 0) < 0)
 		return (-1);
-	if (strr == NULL)
-		strr = ft_memalloc(1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
-	{
-		ft_gnl_buf_add(&strr, buf, ret);
-		if (ft_gnl_do_lines(&strr, line, &i) == 1)
-			return (1);
-	}
-	if (ft_do_last(&strr, line, &i) == 1)
+	if (gnl_copy_buffer(buffer, &buff_position, line, &flag) == 1)
 		return (1);
-	if (ret == -1)
-		return (-1);
+	if (gnl_copy_fd(fd, buffer, &buff_position, line) == 1)
+		return (1);
+	if (ft_strlen(*line) > 0 && flag)
+		return (1);
 	return (0);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vguerand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:49:39 by vguerand          #+#    #+#             */
-/*   Updated: 2018/02/07 21:45:11 by vguerand         ###   ########.fr       */
+/*   Created: 2018/02/07 21:45:51 by vguerand          #+#    #+#             */
+/*   Updated: 2018/02/07 21:45:55 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t n)
 {
-	char *pc;
+	char			*str;
 
-	pc = (char *)malloc(sizeof(*pc) * (ft_strlen(s1) + 1));
-	if (pc != NULL)
-	{
-		ft_strcpy(pc, s1);
-	}
-	return (pc);
+	if (!s1 || !s2)
+		return (NULL);
+	if ((str = ft_strnew(ft_strlen(s1) + n)) == NULL)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strncat(str, s2, n);
+	return (str);
 }
