@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msteffen <msteffen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vguerand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/29 12:04:09 by msteffen          #+#    #+#             */
-/*   Updated: 2018/02/07 13:20:43 by vguerand         ###   ########.fr       */
+/*   Created: 2018/02/07 23:00:16 by vguerand          #+#    #+#             */
+/*   Updated: 2018/02/07 23:00:19 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#include <stdio.h>
 
 static int	gnl_copy_buffer(char *buffer, int *buff_position, char **line,
 	int *flag)
