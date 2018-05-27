@@ -1,8 +1,13 @@
 # libft 
 Coder une librairie en C, en suivant les consignes de 42.
-Projet de 42. Notes 125/125.
+Projet de 42. 
+## Notes 125/125.
 Améliorations prochaines:
   -mise à jour de la librairie avec de nouvelles fonctions
+
+<a href="https://cdn.intra.42.fr/pdf/pdf/1332/libft.fr.pdf"><b>SUJET</b></a>
+
+
 
 #### ft_memalloc
 > Alloue avec `malloc(3)` et retourne une zone de memoire "fraiche". La memoire allouee est intialisee a 0. Si l'allocation echoue, la fonction renvoie `NULL`.
