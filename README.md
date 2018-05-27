@@ -1,5 +1,8 @@
 # libft 
 Coder une librairie en C, en suivant les consignes de 42.
+Projet de 42. Notes 125/125.
+Améliorations prochaines:
+  -mise à jour de la librairie avec de nouvelles fonctions
 
 #### ft_memalloc
 > Alloue avec `malloc(3)` et retourne une zone de memoire "fraiche". La memoire allouee est intialisee a 0. Si l'allocation echoue, la fonction renvoie `NULL`.
@@ -99,8 +102,6 @@ Consulter le `man` pour la description des fonctions suivantes :
 * ft_isprint
 * ft_toupper
 * ft_tolower
-
-## Partie bonus
 #### ft_lstnew
 > Alloue avec `malloc(3)` et retourne un maillon “frais”. Les champs `content` et `content_size` du nouveau maillon sont initialises par copie des parametres de la fonction. Si le parametre `content` est nul, le champs `content` est initialise a `NULL` et le champs `content_size` est initialise a 0 quelque soit la valeur du parametre `content_size`. Le champ `next` est initialise a `NULL`. Si l’allocation echoue, la fonction renvoie `NULL`.
 
