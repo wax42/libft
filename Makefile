@@ -6,41 +6,157 @@
 #    By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:03:16 by vguerand          #+#    #+#              #
-#    Updated: 2018/12/31 11:38:43 by vguerand         ###   ########.fr        #
+#    Updated: 2018/12/31 14:00:23 by vguerand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME = libft.a
 
-COMPIL = gcc
+NAME := libft.a
 
-FLAG = -Wall -Wextra -Werror
-OPT = -c
+#==============================================================================#
+#------------------------------------------------------------------------------#
+#                               DIRECTORIES                                    #
 
-C_HEADERS = libft.h
+SRC_DIR			:= ./srcs
 
-SRCS = ft_nbrlen.c ft_strnjoin.c ft_strndup.c ft_tabint.c get_next_line.c
-ft_nb_mots.c ft_nb_ltr.c ft_index_mot.c ft_lstlen.c ft_isalnum.c ft_isdigit.c ft_lstadd.c
-ft_lstiter.c ft_memalloc.c ft_memcmp.c ft_memmove.c ft_putchar_fd.c ft_putnbr.c ft_putstr_fd.c ft_strclr.c ft_strdel.c ft_striter.c ft_strlcat.c ft_strmapi.c ft_strncpy.c ft_strnstr.c ft_strstr.c ft_tolower.c ft_atoi.c ft_isalpha.c ft_isprint.c ft_lstdel.c ft_lstmap.c ft_memccpy.c ft_memcpy.c ft_memset.c ft_putendl.c ft_putnbr_fd.c ft_strcat.c ft_strcmp.c ft_strdup.c ft_striteri.c ft_strlen.c ft_strncat.c ft_strnequ.c ft_strrchr.c ft_strsub.c ft_toupper.c ft_bzero.c ft_isascii.c ft_itoa.c ft_lstdelone.c ft_lstnew.c ft_memchr.c ft_memdel.c ft_putchar.c ft_putendl_fd.c ft_putstr.c ft_strchr.c ft_strcpy.c ft_strequ.c ft_strjoin.c ft_strmap.c ft_strncmp.c ft_strnew.c ft_strsplit.c ft_strtrim.c
+SRC_SUB_DIR		:=		bool	\
+						put 	\
+						mem 	\
+						str 	\
+						lst
 
-OBJ = $(SRCS:.c=.o)
+SRC_BOOL_DIR	:=		bool
+SRC_MEM_DIR		:=		mem
+SRC_STR_DIR		:=		str
+SRC_PUT_DIR		:=		put
+SRC_LST_DIR		:=		lst
+
+
+INC_DIR			:=		./includes
+OBJ_DIR			:=		./objs
+
+#==============================================================================#
+#------------------------------------------------------------------------------#
+#                                  FILES                                       #
+
+C_HEADERS 	:= libft.h
+
+SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
+							$(SRC_BOOL_DIR)/ft_isalpha.c     			\
+							$(SRC_BOOL_DIR)/ft_isascii.c     			\
+							$(SRC_BOOL_DIR)/ft_isdigit.c     			\
+							$(SRC_BOOL_DIR)/ft_isprint.c     			\
+							$(SRC_PUT_DIR)/ft_putchar.c					\
+							$(SRC_PUT_DIR)/ft_putchar_fd.c				\
+							$(SRC_PUT_DIR)/ft_putstr.c					\
+							$(SRC_PUT_DIR)/ft_putstr_fd.c				\
+							$(SRC_PUT_DIR)/ft_putendl.c					\
+							$(SRC_PUT_DIR)/ft_putendl_fd.c				\
+							$(SRC_PUT_DIR)/ft_putnbr.c					\
+							$(SRC_PUT_DIR)/ft_putnbr_fd.c				\
+							$(SRC_LST_DIR)/ft_lstdel.c					\
+							$(SRC_LST_DIR)/ft_lstdelone.c				\
+							$(SRC_LST_DIR)/ft_lstadd.c					\
+							$(SRC_LST_DIR)/ft_lstiter.c					\
+							$(SRC_LST_DIR)/ft_lstlen.c					\
+							$(SRC_LST_DIR)/ft_lstnew.c					\
+							$(SRC_LST_DIR)/ft_lstmap.c					\
+							$(SRC_STR_DIR)/ft_atoi.c     				\
+							$(SRC_STR_DIR)/ft_itoa.c     				\
+							$(SRC_STR_DIR)/ft_strcat.c   				\
+							$(SRC_STR_DIR)/ft_strchr.c   				\
+							$(SRC_STR_DIR)/ft_strclr.c   				\
+							$(SRC_STR_DIR)/ft_strcmp.c   				\
+							$(SRC_STR_DIR)/ft_strcpy.c   				\
+							$(SRC_STR_DIR)/ft_strdel.c   				\
+							$(SRC_STR_DIR)/ft_strdup.c   				\
+							$(SRC_STR_DIR)/ft_strequ.c   				\
+							$(SRC_STR_DIR)/ft_striter.c  				\
+							$(SRC_STR_DIR)/ft_striteri.c 				\
+							$(SRC_STR_DIR)/ft_strjoin.c  				\
+							$(SRC_STR_DIR)/ft_strlcat.c  				\
+							$(SRC_STR_DIR)/ft_strlen.c   				\
+							$(SRC_STR_DIR)/ft_strmap.c   				\
+							$(SRC_STR_DIR)/ft_strmapi.c  				\
+							$(SRC_STR_DIR)/ft_strncat.c  				\
+							$(SRC_STR_DIR)/ft_strncmp.c  				\
+							$(SRC_STR_DIR)/ft_strncpy.c  				\
+							$(SRC_STR_DIR)/ft_strndup.c  				\
+							$(SRC_STR_DIR)/ft_strnequ.c  				\
+							$(SRC_STR_DIR)/ft_strnew.c   				\
+							$(SRC_STR_DIR)/ft_strnstr.c  				\
+							$(SRC_STR_DIR)/ft_strrchr.c  				\
+							$(SRC_STR_DIR)/ft_strsplit.c 				\
+							$(SRC_STR_DIR)/ft_strstr.c   				\
+							$(SRC_STR_DIR)/ft_strsub.c   				\
+							$(SRC_STR_DIR)/ft_strtrim.c  				\
+							$(SRC_STR_DIR)/ft_tolower.c  				\
+							$(SRC_STR_DIR)/ft_toupper.c  				\
+							$(SRC_MEM_DIR)/ft_bzero.c					\
+							$(SRC_MEM_DIR)/ft_memalloc.c				\
+							$(SRC_MEM_DIR)/ft_memccpy.c					\
+							$(SRC_MEM_DIR)/ft_memchr.c					\
+							$(SRC_MEM_DIR)/ft_memcmp.c					\
+							$(SRC_MEM_DIR)/ft_memcpy.c					\
+							$(SRC_MEM_DIR)/ft_memdel.c					\
+							$(SRC_MEM_DIR)/ft_memmove.c					\
+							$(SRC_MEM_DIR)/ft_memset.c					\
+							ft_index_mot.c								\
+							ft_nb_ltr.c									\
+							ft_nb_mots.c								\
+							ft_nbrlen.c									\
+							ft_tabint.c									\
+							get_next_line.c								\
+
+
+SRC_ALL			:= 			$(addprefix $(SRC_DIR)/,$(SRC_NAME))
+
+OBJ				:=			$(addprefix $(OBJ_DIR)/,$(SRC_NAME:.c=.o))
+NB				:=			$(words $(SRC_ALL))
+INDEX			:=			0
+
+#==============================================================================#
+#------------------------------------------------------------------------------#
+#                            COMPILER & FLAGS                                  #
+
+CC					:=			gcc
+CFLAGS				:=			-Wall -Wextra -Werror
+# CFLAGS			+=			-g3
+# CFLAGS			+=			-O2
+
+
+#==============================================================================#
+#------------------------------------------------------------------------------#
+#                                 RULES                                        #
 
 all: $(NAME)
 
-./%.o: %.c
-	gcc -Wall -Wextra -Werror -c $< -o $@
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@printf "[ 100%% ] %s"
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(INC_DIR)
+	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
+	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
+	@$(eval TO_DO=$(shell echo "$@"))
+	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INC_DIR)
+	@printf "[ %d%% ] %s :: %s       \r" $(PERCENT) $(NAME) $@
+	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
-
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(addprefix $(OBJ_DIR)/,$(SRC_SUB_DIR))
 
 clean:
-	rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
+	@printf '\033[33m[ KILL ] %s\n\033[0m' "Clean of $(NAME) is done ---"
 
-fclean: clean
-	rm -f $(NAME)
+fclean: 				clean
+	@rm -rf $(NAME)
+	@printf '\033[33m[ KILL ] %s\n\033[0m' "Fclean of $(NAME) is done ---"
 
-re: fclean all
+re:
+	@$(MAKE) fclean
+	@$(MAKE)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re build cbuild
