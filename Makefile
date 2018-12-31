@@ -6,7 +6,7 @@
 #    By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:03:16 by vguerand          #+#    #+#              #
-#    Updated: 2018/12/31 14:00:23 by vguerand         ###   ########.fr        #
+#    Updated: 2018/12/31 15:02:10 by vguerand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ OBJ_DIR			:=		./objs
 #------------------------------------------------------------------------------#
 #                                  FILES                                       #
 
-C_HEADERS 	:= libft.h
 
 SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
 							$(SRC_BOOL_DIR)/ft_isalpha.c     			\
