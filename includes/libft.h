@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2018/12/31 11:38:16 by vguerand         ###   ########.fr       */
+/*   Updated: 2018/12/31 18:57:18 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int				ft_isascii(int c);
 **	str
 */
 
-
 char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 char			*ft_strndup(const char *s1, size_t n);
 size_t			ft_strlen(const char *s);
@@ -70,6 +69,7 @@ char			*ft_strnstr(const char	*big, const char *little, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
+float			ft_atof(char *str);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strnew(size_t size);

@@ -6,7 +6,7 @@
 #    By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:03:16 by vguerand          #+#    #+#              #
-#    Updated: 2018/12/31 15:02:10 by vguerand         ###   ########.fr        #
+#    Updated: 2018/12/31 19:00:26 by vguerand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
 							$(SRC_LST_DIR)/ft_lstlen.c					\
 							$(SRC_LST_DIR)/ft_lstnew.c					\
 							$(SRC_LST_DIR)/ft_lstmap.c					\
+							$(SRC_STR_DIR)/ft_atof.c     				\
 							$(SRC_STR_DIR)/ft_atoi.c     				\
 							$(SRC_STR_DIR)/ft_itoa.c     				\
 							$(SRC_STR_DIR)/ft_strcat.c   				\
@@ -81,6 +82,7 @@ SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
 							$(SRC_STR_DIR)/ft_strncpy.c  				\
 							$(SRC_STR_DIR)/ft_strndup.c  				\
 							$(SRC_STR_DIR)/ft_strnequ.c  				\
+							$(SRC_STR_DIR)/ft_strnjoin.c  				\
 							$(SRC_STR_DIR)/ft_strnew.c   				\
 							$(SRC_STR_DIR)/ft_strnstr.c  				\
 							$(SRC_STR_DIR)/ft_strrchr.c  				\
