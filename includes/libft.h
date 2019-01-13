@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2019/01/13 13:37:43 by vguerand         ###   ########.fr       */
+/*   Updated: 2019/01/13 16:50:48 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void			*ft_memalloc(size_t size);
 **	put
 */
 
+void 			ft_putnchar(int c, size_t n);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);

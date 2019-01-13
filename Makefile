@@ -6,7 +6,7 @@
 #    By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:03:16 by vguerand          #+#    #+#              #
-#    Updated: 2019/01/13 13:38:11 by vguerand         ###   ########.fr        #
+#    Updated: 2019/01/13 16:50:14 by vguerand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
 							$(SRC_PUT_DIR)/ft_putendl.c					\
 							$(SRC_PUT_DIR)/ft_putendl_fd.c				\
 							$(SRC_PUT_DIR)/ft_putnbr.c					\
+							$(SRC_PUT_DIR)/ft_putnchar.c				\
 							$(SRC_PUT_DIR)/ft_putnbr_fd.c				\
 							$(SRC_LST_DIR)/ft_lstdel.c					\
 							$(SRC_LST_DIR)/ft_lstdelone.c				\
