@@ -6,7 +6,7 @@
 #    By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:03:16 by vguerand          #+#    #+#              #
-#    Updated: 2018/12/31 19:00:26 by vguerand         ###   ########.fr        #
+#    Updated: 2019/01/13 13:38:11 by vguerand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ OBJ_DIR			:=		./objs
 
 SRC_NAME 	:=  			$(SRC_BOOL_DIR)/ft_isalnum.c     			\
 							$(SRC_BOOL_DIR)/ft_isalpha.c     			\
+							$(SRC_BOOL_DIR)/ft_iswhitespace.c   		\
 							$(SRC_BOOL_DIR)/ft_isascii.c     			\
 							$(SRC_BOOL_DIR)/ft_isdigit.c     			\
 							$(SRC_BOOL_DIR)/ft_isprint.c     			\

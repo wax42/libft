@@ -6,7 +6,7 @@
 /*   By: vguerand <vguerand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:28:46 by vguerand          #+#    #+#             */
-/*   Updated: 2018/12/31 18:57:18 by vguerand         ###   ########.fr       */
+/*   Updated: 2019/01/13 13:37:43 by vguerand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 **	bool
 */
 
+int				ft_iswhitespace(int c);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
